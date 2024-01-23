@@ -1,3 +1,5 @@
+# Version 1.1: improved language
+
 # Simulator internal packages
 from library.metadata import *
 from library.person import *
@@ -23,20 +25,20 @@ NUMBER_OF_EXAMPLES = 10000
 left_column, center_column, right_column = st.columns((1, 1, 2))
 left_column.image('./img/projectLogo.jpg', use_column_width=True)
 right_column.image('./img/rtaLogo.jpg', use_column_width=True)
-st.title('Šķivja atkritumu prognozēšanas rīks skolām')
+st.title('Pasniegtā ēdiena atkritumu traukos prognozēšanas rīks skolām')
 
 # Description
 st.write('**Apraksts:** pielietojot šo simulācijas rīku, skolas vadība var noteikt vidējo pārtikas atkritumu daudzumu, ievadot skolas īpašības.')
 st.write('**Ierobežojumi:**')
-st.write('* rīks pielieto Rēzeknes skolu parametrus, kas tika iegūti aptaujas un atkrītumu mērīšanas laikā;')
-st.write('* rīks balstās uz porcijām izmēriem atbilstoši MK noteikumiem Nr. 172, versija 28/08/2020.')
+st.write('* rīks izmanto Rēzeknes skolu parametrus, kas tika iegūti aptaujas un atkrītumu mērīšanas laikā;')
+st.write('* rīks balstās uz porciju izmēriem atbilstoši MK noteikumiem Nr. 172, versija 28/08/2020.')
 
 # User input
 st.write('**Skolas profils:**')
-breakfastDuration = st.slider('Pārtraukuma ilgums (min):', min_value=5, max_value=60, value=30, step=1)
-pathTime = st.slider('Laiks ceļā (min):', min_value=0, max_value=20, value=6, step=1)
-dislikeProbab = st.slider('Cik bērniem nepatīk skolas ēdiens (%):', min_value=0, max_value=100, value=27, step=1)
-externalFoodProbab = st.slider('Cik bērni ēd konkurējošo ēdienu (%):', min_value=0, max_value=100, value=30, step=1)
+breakfastDuration = st.slider('Pārtraukuma ilgums (min.):', min_value=5, max_value=60, value=30, step=1)
+pathTime = st.slider('Ceļā pavadītais laiks (min.):', min_value=0, max_value=20, value=6, step=1)
+dislikeProbab = st.slider('Bērnu īpatsvars, kuriem nepatīk skolas ēdiens (%):', min_value=0, max_value=100, value=27, step=1)
+externalFoodProbab = st.slider('Bērnu īpatsvars, kuri ēd konkurējošo ēdienu (%):', min_value=0, max_value=100, value=30, step=1)
 
 # Data
 resultsSnacksWaste = 0      # competitive food impact
